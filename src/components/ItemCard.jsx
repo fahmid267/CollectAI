@@ -43,13 +43,16 @@ export default function ItemCard({
           </div>
 
           <span className="flex justify-end mt-10 text-[16px]">
-            <Link
-              to={link}
-              target="_blank"
-              className="hover:border-b hover:text-white transition-all duration-150"
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                window.open(link, "_blank", "noopener noreferrer");
+              }}
+              className="hover:border-b hover:text-white transition-all duration-150 cursor-pointer pb-1"
             >
               Go to Site
-            </Link>
+            </button>
           </span>
         </div>
       </BorderGlow>

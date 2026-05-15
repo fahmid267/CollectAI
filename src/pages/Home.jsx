@@ -89,7 +89,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center overflow-x-hidden w-full">
       <div style={{ width: "100%", height: "100vh", position: "relative" }}>
         <LightRays
           raysOrigin="top-center"
@@ -138,7 +138,7 @@ export default function Home() {
           </h1>
           <div className="w-20 h-0.5 bg-white"></div>
         </span>
-        <h1 className="text-4xl font-bold text-white">Explore Your Needs</h1>
+        <h1 className="text-4xl font-bold text-white" id="explore">Explore Your Needs</h1>
 
         <div className="relative h-full py-20">
           <Carousel slides={categories} />
@@ -231,9 +231,8 @@ export default function Home() {
             <button
               key={index}
               onClick={() => setCurrentNewsIndex(index)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentNewsIndex ? "bg-white" : "bg-gray-600"
-              }`}
+              className={`w-2 h-2 rounded-full transition-colors ${index === currentNewsIndex ? "bg-white" : "bg-gray-600"
+                }`}
               aria-label={`Go to news item ${index + 1}`}
             />
           ))}
